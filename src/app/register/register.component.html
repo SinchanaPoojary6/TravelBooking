@@ -1,0 +1,67 @@
+<div class="card">
+    <div class="card-header">
+      Register - Template Form
+    </div>
+    <div class="card-body">
+      <form novalidate (ngSubmit)="saveRegisterForm(registerForm)" #registerForm="ngForm">
+        <!-- Username Field -->
+        <div class="form-group">
+          <label for="usernameId">Username</label>
+          <input
+            type="text"
+            class="form-control"
+            id="usernameId"
+            name="username"
+            ngModel
+            required
+            #username="ngModel"
+          />
+          <div *ngIf="username.invalid && username.touched" class="text-danger">
+            Username is required.
+          </div>
+        </div>
+  
+        <!-- Email Field -->
+        <div class="form-group">
+          <label for="emailId">Email</label>
+          <input
+            type="email"
+            class="form-control"
+            id="emailId"
+            name="email"
+            ngModel
+            required
+            email
+            #email="ngModel"
+          />
+          <div *ngIf="email.invalid && email.touched" class="text-danger">
+            <div *ngIf="email.errors?.['required']">Email is required.</div>
+            <div *ngIf="email.errors?.['email']">Invalid email format.</div>
+          </div>
+        </div>
+  
+        <!-- Password Field -->
+        <div class="form-group">
+          <label for="passwordId">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="passwordId"
+            name="password"
+            ngModel
+            required
+            #password="ngModel"
+          />
+          <div *ngIf="password.invalid && password.touched" class="text-danger">
+            Password is required.
+          </div>
+        </div>
+  
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary mt-3" [disabled]="registerForm.invalid">
+          Register
+        </button>
+      </form>
+    </div>
+  </div>
+  

@@ -1,0 +1,97 @@
+<div class="container">
+  <h2>{{ isEditMode ? 'Edit City' : 'Add New City' }}</h2>
+
+  <form #cityForm="ngForm" (ngSubmit)="onSave()" novalidate>
+    <!-- Name Field -->
+    <div class="form-group">
+      <label for="name">City Name</label>
+      <input
+        type="text"
+        id="name"
+        class="form-control"
+        [(ngModel)]="cities.name"
+        name="name"
+        required
+      />
+      <div *ngIf="cityForm.submitted && !cities.name" class="text-danger">
+        City name is required.
+      </div>
+    </div>
+
+    <!-- Image Field -->
+    <div class="form-group">
+      <label for="img">Image URL</label>
+      <input
+        type="text"
+        id="img"
+        class="form-control"
+        [(ngModel)]="cities.img"
+        name="img"
+        required
+      />
+      <div *ngIf="cityForm.submitted && !cities.img" class="text-danger">
+        Image URL is required.
+      </div>
+    </div>
+
+    <!-- Type Field -->
+    <div class="form-group">
+      <label for="type">Type</label>
+      <input
+        type="text"
+        id="type"
+        class="form-control"
+        [(ngModel)]="cities.type"
+        name="type"
+        required
+      />
+      <div *ngIf="cityForm.submitted && !cities.type" class="text-danger">
+        Type is required.
+      </div>
+    </div>
+
+    <!-- Rating Field -->
+    <div class="form-group">
+      <label for="rating">Rating</label>
+      <input
+        type="number"
+        id="rating"
+        class="form-control"
+        [(ngModel)]="cities.rating"
+        name="rating"
+        min="0"
+        max="5"
+        required
+      />
+      <div *ngIf="cityForm.submitted && !cities.rating" class="text-danger">
+        Rating is required.
+      </div>
+    </div>
+
+    <!-- Price Field -->
+    <div class="form-group">
+      <label for="price">Price</label>
+      <input
+        type="number"
+        id="price"
+        class="form-control"
+        [(ngModel)]="cities.price"
+        name="price"
+        required
+      />
+      <div *ngIf="cityForm.submitted && !cities.price" class="text-danger">
+        Price is required.
+      </div>
+    </div>
+
+    <!-- Submit Button -->
+    <button
+      type="submit"
+      class="btn btn-primary"
+      [disabled]="!cityForm.valid"
+    >
+      {{ isEditMode ? 'Update City' : 'Add City' }}
+    </button>
+    <button (click)="onBack()" class="btn btn-secondary">Cancel</button>
+  </form>
+</div>

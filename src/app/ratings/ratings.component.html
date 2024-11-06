@@ -1,0 +1,14 @@
+<div class="stars" (click)="onClick()" title="{{ rating }}">
+    <!-- Background (empty) stars -->
+    <div class="star-background">
+      <fa-icon *ngFor="let star of [1, 2, 3, 4, 5]" [icon]="faStar"></fa-icon>
+    </div>
+  
+    <!-- Foreground (filled) stars with clipped width -->
+    <div class="star-foreground" [style.width.%]="starWidth">
+      <fa-icon *ngFor="let star of [1, 2, 3, 4, 5]" [icon]="faStar"></fa-icon>
+    </div>
+  </div>
+  
+  
+  

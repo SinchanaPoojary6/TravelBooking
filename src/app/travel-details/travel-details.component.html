@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="card" *ngIf="selectedCity; else notFound">
+    <h2>Booking Details for {{ selectedCity.name }}</h2>
+    <img [src]="selectedCity.img" alt="{{ selectedCity.name }} image">
+    
+    <p class="tour-id">Tour ID: {{ selectedCity.tourID }}</p>
+    <p class="type">Type: {{ selectedCity.type }}</p>
+    <p class="price">Price: ${{ selectedCity.price }}</p>
+    <p class="rating">Rating: {{ selectedCity.rating }}/5</p>
+    
+    <button (click)="onBack()" class="btn btn-info">Go Back</button>
+  </div>
+  <ng-template #notFound>
+    <p>City not found.</p>
+  </ng-template>
+</div>

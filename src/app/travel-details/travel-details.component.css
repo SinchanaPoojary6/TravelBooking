@@ -1,0 +1,81 @@
+/* Centering the card container */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background-color: #f4f6f8;
+  }
+  
+  /* Main card styling */
+  .card {
+    width: 100%;
+    max-width: 550px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    padding: 2rem;
+    margin: 1.5rem;
+    color: #34495e;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .card:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Heading styling */
+  .card h2 {
+    font-size: 1.8rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-family: 'Roboto Slab', serif;
+    font-weight: 700;
+  }
+  
+  /* Image styling */
+  .card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Uniform styling for details */
+  .card p {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0.6rem 0;
+  }
+  
+  /* Specific styles for details to maintain a professional tone */
+  .tour-id, .type, .price, .rating {
+    color: #34495e;
+  }
+  
+  /* Button styling */
+  .btn-info {
+    background-color: #2980b9;
+    color: #ffffff;
+    padding: 0.8rem 1.4rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .btn-info:hover {
+    background-color: #1a6fa5;
+    transform: scale(1.05);
+  }
+  
+  .btn-info:focus {
+    outline: none;
+  }
+  

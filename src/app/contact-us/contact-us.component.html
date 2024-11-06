@@ -1,0 +1,42 @@
+<div class="card">
+    <div class="card-header">
+      Contact Us - Reactive Form
+    </div>
+    
+    <div class="card-body">
+      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+        
+        <!-- Name Field -->
+        
+        <div class="form-group mb-2">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="name" formControlName="name" />
+          
+        </div>
+       
+  
+        <!-- Email Field -->
+        <div class="form-group mb-2">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" id="email" formControlName="email" />
+        </div>
+  
+        <!-- Subject Field -->
+        <div class="form-group mb-2">
+          <label for="subject">Subject</label>
+          <input type="text" class="form-control" id="subject" formControlName="subject" />
+        </div>
+  
+        <!-- Message Field -->
+        <div class="form-group mb-2">
+          <label for="message">Message</label>
+          <textarea class="form-control" id="message" formControlName="message"></textarea>
+        </div>
+  
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary mt-3">Send Message</button>
+        
+      </form>
+    </div>
+  </div>
+  

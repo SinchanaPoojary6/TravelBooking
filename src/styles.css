@@ -1,0 +1,63 @@
+/* You can add global styles to this file, and also import other style files */
+@import "bootstrap/dist/css/bootstrap.css";
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Set a global font */
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  /* Define a color scheme */
+  :root {
+    --primary-color: #0056b3;
+    --secondary-color: #6c757d;
+    --background-color: #ffffff;
+    --text-color: #333;
+    --button-hover: #004085;
+    --card-border: #d1d1d1;
+  }
+  
+  /* Container Styling */
+  .main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Button Styling */
+  button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: var(--button-hover);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .main-container {
+      padding: 10px;
+    }
+  
+    .hotel-card, .flight-card {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+  
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

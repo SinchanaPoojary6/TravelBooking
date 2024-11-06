@@ -1,0 +1,24 @@
+.stars {
+    position: relative;
+    display: inline-block;
+    font-size: 24px;  /* Adjust star size as needed */
+    color: #ccc;      /* Color for empty stars */
+  }
+  
+  .star-background {
+    color: #ccc;  /* Empty stars (background) color */
+  }
+  
+  .star-foreground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    color: gold;  /* Color for filled stars */
+  }
+  
+  .fa-icon {
+    font-size: inherit;
+  }
+  

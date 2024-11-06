@@ -1,0 +1,41 @@
+<div class="container">
+  <h2>Explore Our Destinations</h2>
+  <button class="btn btn-primary mb-3" (click)="addCity()" style="position: absolute; top: 10px; left: 10px;">
+    Add New City
+  </button>
+  <mat-slide-toggle class="form-icon">lock</mat-slide-toggle>
+
+  <!-- Search box -->
+  <input 
+    type="text" 
+    class="form-control" 
+    placeholder="Search for a city..." 
+    [(ngModel)]="searchTerm" 
+    (ngModelChange)="filterCities()">
+  
+  <!-- City cards -->
+  <div class="row">
+    <div class="col-lg-4 col-md-6 mb-4" *ngFor="let city of filteredCities">
+      <div class="card h-100">
+        <img class="card-img-top" [src]="city.img" alt="{{ city.name }} image">
+        <div class="card-body">
+          <h4 class="card-title">{{ city.name }}</h4>
+          <p class="card-text">{{ city.type }}</p>
+          <p class="card-text">Price: ${{ city.price }}</p>
+          <button class="btn btn-warning mr-2" (click)="editCity(city.tourID)">Edit</button>
+          <button class="btn btn-danger" (click)="deleteCity(city.tourID)">Delete</button>
+          <app-ratings 
+            [rating]="city.rating"
+            (ratingClicked)="onRatingClicked($event)">
+          </app-ratings>
+        </div>
+        <div class="card-footer">
+          <!-- Book button -->
+          <button class="btn btn-primary" (click)="bookCity(city.tourID)">
+            Book Now
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
